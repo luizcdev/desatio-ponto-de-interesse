@@ -1,0 +1,27 @@
+version: '3'
+
+networks:
+  desafio: 
+    driver: bridge
+
+services:    
+  db:
+    image: postgres
+    networks:
+      - desafio
+    environment:
+      POSTGRES_DB: desafio
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Postgres2018!
+    ports:
+      - "5432:5432"
+  backend:
+    build: .
+    networks:
+      - desafio  
+    ports: 
+      - "8080:8080"
+    depends_on: 
+      - db  
+      
+    
