@@ -6,7 +6,7 @@ Api desenvolvida para cadastro e pesquisa de Pontos de Interesse baseado em sua 
 ### Requisitos
  - [Docker](https://docs.docker.com/)
 
-### Principai Técnologias Utilizadas
+### Principais Tecnologias Utilizadas
  - [Java](https://www.java.com/pt_BR/)
  - [Spring Boot](https://spring.io/projects/spring-boot)
  - [PostgreSQL](https://www.postgresql.org/)
@@ -21,4 +21,4 @@ Api desenvolvida para cadastro e pesquisa de Pontos de Interesse baseado em sua 
   4) Após finalizar todo o processo, o sistema estará disponível para uso
   
 ### Documentação
-  - Disponível através do link ```http://localhost:8089/swagger-ui.html```
+  - Disponível através do link ```http://localhost:8080/swagger-ui.html```
