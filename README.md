@@ -6,7 +6,7 @@ Api desenvolvida para cadastro e pesquisa de Pontos de Interesse baseado em sua 
 ### Requisitos
  - [Docker](https://docs.docker.com/)
 
-### Principai Técnologias Utilizadas
+### Principais Tecnologias Utilizadas
  - [Java](https://www.java.com/pt_BR/)
  - [Spring Boot](https://spring.io/projects/spring-boot)
  - [PostgreSQL](https://www.postgresql.org/)
