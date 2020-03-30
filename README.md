@@ -21,4 +21,4 @@ Api desenvolvida para cadastro e pesquisa de Pontos de Interesse baseado em sua 
   4) Após finalizar todo o processo, o sistema estará disponível para uso
   
 ### Documentação
-  - Disponível através do link ```http://localhost:8089/swagger-ui.html```
+  - Disponível através do link ```http://localhost:8080/swagger-ui.html```
