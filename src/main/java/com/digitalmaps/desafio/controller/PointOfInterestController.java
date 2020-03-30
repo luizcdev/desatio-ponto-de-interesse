@@ -30,6 +30,7 @@ import com.digitalmaps.desafio.model.PointOfInterest;
 import com.digitalmaps.desafio.service.PointOfInterestService;
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 @RestController
 @RequestMapping("pointofinterest")
@@ -58,10 +59,18 @@ public class PointOfInterestController {
 	@GetMapping(value= "/proximity/{x}/{y}/{distance}/{time}", produces ="application/json")
 	@ResponseBody
 	public List<String> findByProximity(
+			@ApiParam("Coordenada X da posição atual do usuário")
 			@PathVariable("x") int x, 
+			
+			@ApiParam("Coordenada Y da posição atual do usuário") 
 			@PathVariable("y") int y,
+			
+			@ApiParam("Distância máxima desejada")
 			@PathVariable("distance") int distance, 
-			@PathVariable("time") @DateTimeFormat(pattern = TimeUtil.PATTERN_HOUR_MINUTE) Date time) throws Exception {
+			
+			@ApiParam("Horário atual em HH:mm")
+			@PathVariable("time") 
+			@DateTimeFormat(pattern = TimeUtil.PATTERN_HOUR_MINUTE) Date time) throws Exception {
 		
 		return pointOfInterestService.findByProximity(x, y, distance, new Time(time.getTime()));
 	}
