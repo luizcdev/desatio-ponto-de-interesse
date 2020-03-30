@@ -2,8 +2,12 @@
 
 ### Sobre
 Api desenvolvida para cadastro e pesquisa de Pontos de Interesse baseado em sua localização.
+<br><br>
 Os métodos disponíveis na Api, permitem cadastrar pontos de interesse com sua localização e horário de funcionamento, listar todos os pontos de interesse cadastros e listar apenas pontos de interesse a uma distância desejada, exibindo ainda se estão abertos ou fechados.
-<br>Para a listagem dos pontos próximos, é utilizado o método de distância [euclidiana](https://pt.wikipedia.org/wiki/Dist%C3%A2ncia_euclidiana).
+<br>
+Para a listagem dos pontos próximos, é utilizado o método de [distância euclidiana](https://pt.wikipedia.org/wiki/Dist%C3%A2ncia_euclidiana).
+<br><br>
+A Api conta com teste unitário e de integração para garantir o funcionamento correto das funcionalidades.
 
 ### Requisitos
  - [Docker](https://docs.docker.com/)
