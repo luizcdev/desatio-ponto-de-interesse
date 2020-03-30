@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.digitalmaps</groupId>
-	<artifactId>ponto-interesse</artifactId>
+	<artifactId>desafio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>desafio</name>
 	<description>API para cadastro e busca de pontos de interesse com base em sua localização</description>
