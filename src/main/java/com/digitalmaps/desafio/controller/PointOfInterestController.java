@@ -70,7 +70,6 @@ public class PointOfInterestController {
 			@ApiParam("Horário atual em HH:mm")
 			@PathVariable("time") 
 			@Pattern(regexp = RegexPattern.TIME_HH_MM_24H, message = "Formato inesperado para o parâmetro time, utilize o padrão HH:mm")
-			//@DateTimeFormat(pattern = TimeUtil.PATTERN_HOUR_MINUTE) Date time
 			String time ) throws Exception {
 	
 		
