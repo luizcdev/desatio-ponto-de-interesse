@@ -1,15 +1,13 @@
 package com.digitalmaps.desafio.controller;
 
-import java.sql.Time;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.ObjectError;
@@ -25,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
+import com.digitalmaps.desafio.core.constant.RegexPattern;
 import com.digitalmaps.desafio.core.util.TimeUtil;
 import com.digitalmaps.desafio.model.PointOfInterest;
 import com.digitalmaps.desafio.service.PointOfInterestService;
@@ -70,9 +69,12 @@ public class PointOfInterestController {
 			
 			@ApiParam("Horário atual em HH:mm")
 			@PathVariable("time") 
-			@DateTimeFormat(pattern = TimeUtil.PATTERN_HOUR_MINUTE) Date time) throws Exception {
+			@Pattern(regexp = RegexPattern.TIME_HH_MM_24H, message = "Formato inesperado para o parâmetro time, utilize o padrão HH:mm")
+			//@DateTimeFormat(pattern = TimeUtil.PATTERN_HOUR_MINUTE) Date time
+			String time ) throws Exception {
+	
 		
-		return pointOfInterestService.findByProximity(x, y, distance, new Time(time.getTime()));
+		return pointOfInterestService.findByProximity(x, y, distance, TimeUtil.stringToTime(TimeUtil.PATTERN_HOUR_MINUTE, time));
 	}
 	
 	//Trata os erro de validação, para retornar apenas as mensagens de críticas

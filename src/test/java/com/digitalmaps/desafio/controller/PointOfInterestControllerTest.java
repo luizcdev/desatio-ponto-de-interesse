@@ -168,7 +168,7 @@ public class PointOfInterestControllerTest {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/pointofinterest/proximity/1000/1000/1/25:00")
 				.contentType(MediaType.APPLICATION_JSON))
 			.andExpect(status().isBadRequest())
-			.andExpect(MockMvcResultMatchers.content().string("Formato inesperado para o parâmetro: time"));
+			.andExpect(MockMvcResultMatchers.content().string(containsString("Formato inesperado para o parâmetro time, utilize o padrão HH:mm")));
 		
 	}
 	
